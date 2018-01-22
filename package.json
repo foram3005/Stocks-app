@@ -1,0 +1,30 @@
+{
+    "name": "stocksapp",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "react-scripts": "0.9.5"
+    },
+    "dependencies": {
+        "chokidar": "^2.0.0",
+        "material-ui": "^0.17.1",
+        "react": "^15.4.2",
+        "react-bash": "^1.5.3",
+        "react-d3-basic": "^1.6.11",
+        "react-d3-tooltip": "^1.4.14",
+        "react-dom": "^15.4.2",
+        "react-router": "^4.0.0",
+        "react-router-dom": "^4.0.0",
+        "react-tap-event-plugin": "^2.0.1",
+        "react-websocket": "^2.0.0",
+        "superagent": "^3.5.1",
+        "underscore": "^1.8.3",
+        "ws": "^4.0.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    }
+}

@@ -1,0 +1,31 @@
+section {
+    margin: 30px 0;
+}
+
+.highcharts-container {
+    margin: 50px 0;
+}
+
+table tr {
+    border: 1px solid;
+}
+
+a {
+    cursor: pointer;
+}
+
+td.higher {
+    background-color: greenyellow;
+}
+
+td.lower {
+    background-color: red;
+}
+
+.float-right {
+    float: right;
+}
+
+.btn {
+    margin-left: 10px;
+}
