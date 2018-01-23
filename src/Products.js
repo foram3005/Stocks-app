@@ -39,11 +39,11 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
-    const { endpoint } = this.state;
-    const socket = socketIOClient(endpoint);
-    console.log('====aya======')
-    socket.on("FromAPI", data => this.handleData(data));
-    this.handleData();
+    // const { endpoint } = this.state;
+    // const socket = socketIOClient(endpoint);
+    // console.log('====aya======')
+    // socket.on("FromAPI", data => this.handleData(data));
+    // this.handleData();
   }
 
   render() {
@@ -51,8 +51,8 @@ class Products extends React.Component {
     console.log('=====state=',this.state)
     return (
       <div>
-        {/* <Websocket url='ws://stocks.mnet.website'
-              onMessage={this.handleData.bind(this)}/> */}
+        <Websocket url='ws://stocks.mnet.website'
+              onMessage={this.handleData.bind(this)}/>
         <div className="table-responsive">
         </div>
         <ProductTable
