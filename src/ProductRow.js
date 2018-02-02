@@ -23,6 +23,7 @@ class ProductRow extends React.Component {
             
           }
         </td>
+        <td>{this.props.product.updated_at}</td>
         <td>{this.props.product.high}</td>
         <td>{this.props.product.low}</td>
       </tr>

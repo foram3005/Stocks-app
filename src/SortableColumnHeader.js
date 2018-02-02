@@ -13,7 +13,7 @@ class SortableColumnHeader extends React.Component {
     let currentSort = this.props.currentSort.column === this.props.column ? this.props.currentSort.direction : false;
     return(
       <th>
-        {this.props.column}
+        {this.props.label}
         <button
           onClick={this.handleSort}
           className={currentSort === 'asc' ? 'SortableColumnHeader-current glyphicon btn btn-default glyphicon-chevron-up' : 'btn btn-default glyphicon glyphicon-chevron-up'}

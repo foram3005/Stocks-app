@@ -41,6 +41,7 @@ class ProductTable extends React.Component {
       }
     });
   }
+
   render() {
     var rows = [];
     this.sortProducts().forEach((product) => {
@@ -55,9 +56,11 @@ class ProductTable extends React.Component {
               <SortableColumnHeader
                 onSort={this.handleSort}
                 currentSort={this.state.sort}
-                column="Stock Name"
+                column="name"
+                label="Ticker"
               ></SortableColumnHeader>
               <td>Price</td>
+              <td>Last Updated</td>
               <td>High</td>
               <td>Low</td>
             </tr>

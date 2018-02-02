@@ -1,16 +1,13 @@
 import React from 'react';
 import ProductTable from './ProductTable.js';
 import Websocket from 'react-websocket';
-import socketIOClient from "socket.io-client";
 import _ from 'underscore';
 
 class Products extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: {},
-      response: false,
-      endpoint: "http://127.0.0.1:4001"
+      products: {}
     };
 
     this.handleData = this.handleData.bind(this);
@@ -18,9 +15,9 @@ class Products extends React.Component {
   
   handleData(obj) {
     let that = this;
-    console.log('=========data=',obj)
     let result = JSON.parse(obj);
     result.forEach((res) => {
+      let currentdate = new Date();
       let low = that.state.products[res[0]] ? (that.state.products[res[0]].price > res[1] ? res[1] : that.state.products[res[0]].price) : null;
       let high = that.state.products[res[0]] ? (that.state.products[res[0]].price < res[1] ? res[1] : that.state.products[res[0]].price) : null;
       that.state.products[res[0]] = {
@@ -29,7 +26,12 @@ class Products extends React.Component {
         classname: res[1] == high ? 'higher' : (res[1] == low ? 'lower' : 'initial'),
         high:high ? high : res[1],
         low:low ? low : res[1],
-        updated_at: (new Date()).toString()
+        updated_at: currentdate.getDate() + "/"
+                    + (currentdate.getMonth()+1)  + "/" 
+                    + currentdate.getFullYear() + " @ "  
+                    + currentdate.getHours() + ":"  
+                    + currentdate.getMinutes() + ":" 
+                    + currentdate.getSeconds()
       }
     });
 
@@ -38,17 +40,8 @@ class Products extends React.Component {
     });
   }
 
-  componentDidMount() {
-    // const { endpoint } = this.state;
-    // const socket = socketIOClient(endpoint);
-    // console.log('====aya======')
-    // socket.on("FromAPI", data => this.handleData(data));
-    // this.handleData();
-  }
-
   render() {
     var that = this;
-    console.log('=====state=',this.state)
     return (
       <div>
         <Websocket url='ws://stocks.mnet.website'
